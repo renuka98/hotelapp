@@ -16,7 +16,8 @@ def create_app():
     app.secret_key='thisisasecretkey122'
     
     #db configurations for the app
-    app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///hotel.db'
+    #app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///hotel.db'
+    app.config['SQLALCHEMY_DATABASE_URI']=os.environ['DATABASE_URL']
     
     #initialize the database with Flask app
     db.init_app(app)
